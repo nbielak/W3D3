@@ -15,7 +15,7 @@ class Visit < ApplicationRecord
     Visit.new(options)
   end
 
-  belongs_to :visitors,
+  belongs_to :visitor,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :User
