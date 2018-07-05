@@ -21,8 +21,13 @@ class ShortenedURL < ApplicationRecord
     class_name: :User
 
   has_many :visitors,
-    through: :visits,
-    source: :visitor
+    primary_key: :id,
+    foreign_key: :short_url_id,
+    class_name: :Visit
+
+  # has_many :taggings,
+  #   through: :taggings,
+  #   source: :tags
 
   def self.random_code
 
